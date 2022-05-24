@@ -39,6 +39,8 @@ print(order_prod4.product_id)
 
 print(order_prod1.orderbr.name)
 print(order_prod3.orderbr.name)
+print(order_prod2.productsbr.name)
+print(order_prod4.productsbr.price)
 
 # print(f"Cities in the UK are: {uk.cities[0].name}, {uk.cities[1].name}")
 # print(f"London's country is: {ldn.country.name}")
