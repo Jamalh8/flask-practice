@@ -29,10 +29,16 @@ class myForm(FlaskForm):
         for banned in ["admin", "root", "sys"]:
             if username.data.lower()== banned:
                 raise ValidationError(f"Can't use that username")
+                
         not_allowed = " *?!'^+%&\/\"()=}][{$#£ "
         for char in username.data.lower():
             if char in not_allowed:
                 raise ValidationError(f"Special characters are not allowed in username.")
+
+        no_number = '1234567890'
+        for num in username.data.lower():
+            if num in no_number:
+                raise ValidationError(f'Not allowed numbers')
 
 @app.route('/', methods=['GET','POST'])
 def postName():
